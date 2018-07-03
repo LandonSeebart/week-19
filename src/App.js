@@ -6,11 +6,12 @@ class App extends Component {
     id: {},
     url: {}
   };
-  
+
   render() {
     return (
       <div className="App">
-        <Card  />
+        <Card id="1" />
+        <Card id="2" />
       </div>
     );
   }
