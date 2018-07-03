@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
 import Card from './components/Card'
 
+const ids = [
+  '1',
+  '2'
+]
+
 class App extends Component {
   state = {
-    cardIds: {},
-    url: {}
+    ids: []
   };
 
-  showId = Card => {
-    const cardIds = { ... this.state.id}
-    cardIds = cardIds.push(this.id)
-    this.setState ({
-      cardIds
+  showId = id => {
+    const { ids } = this.state
+
+    if (ids.includes(id)) {
+      return
+    }
+
+    this.setState({
+      ids: [...ids, id]
     });
   }
 
   render() {
+    // const shuffledIds = _shuffle(ids)
+
     return (
       <div className="App">
-        <Card id="1" />
-        <Card id="2" />
+        <div>{this.state.ids.join(',')}</div>
+        {ids.map(id => (
+          <Card
+            key={id}
+            id={id}
+            onClick={this.showId}
+          />
+        ))}
       </div>
     );
   }

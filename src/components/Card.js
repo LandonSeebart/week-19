@@ -10,14 +10,14 @@ const styles = {
 };
 
 class Card extends React.Component {
-  showId = () => {
-    console.log(this.props.id);
+  handleClick = () => {
+    this.props.onClick(this.props.id)
   }
   
   render () {
     return (
     <div style={ styles.container }>
-      <button onClick={this.showId}>Card</button>
+      <button onClick={this.handleClick}>Card</button>
     </div>
     )
   }
