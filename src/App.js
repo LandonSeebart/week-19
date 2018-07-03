@@ -3,9 +3,17 @@ import Card from './components/Card'
 
 class App extends Component {
   state = {
-    id: {},
+    cardIds: {},
     url: {}
   };
+
+  showId = Card => {
+    const cardIds = { ... this.state.id}
+    cardIds = cardIds.push(this.id)
+    this.setState ({
+      cardIds
+    });
+  }
 
   render() {
     return (

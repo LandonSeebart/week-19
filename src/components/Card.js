@@ -14,7 +14,6 @@ class Card extends React.Component {
     console.log(this.props.id);
   }
   
-
   render () {
     return (
     <div style={ styles.container }>
